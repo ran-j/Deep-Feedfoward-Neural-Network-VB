@@ -1,6 +1,6 @@
 Public Class Matrix
     Private rows, cols As Integer
-    Private rnd As New Random()
+    Private ReadOnly rnd As New Random()
     Public data
 
     Sub New(rows, cols)
@@ -13,12 +13,11 @@ Public Class Matrix
     End Sub
 
     'Other Stuff
-    Public Sub randomize()
+    Public Sub Randomize()
 
     End Sub
 
-
-    Public Function map(m1 As Matrix, func As Object)
+    Public Function Map(m1 As Matrix, func As Object)
         Dim matrix = New Matrix(m1.rows, m1.cols)
         matrix.data = m1.data.Select(Function(v) v.Select(Function(x) x).ToArray()).ToArray()
         Return matrix
